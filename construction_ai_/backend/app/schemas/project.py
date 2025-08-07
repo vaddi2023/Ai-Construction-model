@@ -1,0 +1,1 @@
+# TODO: Define Pydantic schema for project
