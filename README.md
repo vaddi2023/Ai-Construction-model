@@ -1,5 +1,5 @@
 # Ai-Construction field-model 
-Helps people to analyse things happening easily in the work place 
+Helps people to analyse things happening easily in the work orders and their activities.
 
 Started working on Phase 1 of implementation.  
 
