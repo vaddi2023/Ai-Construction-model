@@ -20,6 +20,10 @@ A mobile-first application that simplifies project tracking and site operations 
 - 🌐 CORS, Pydantic
 
 ---
+### Architecture 
+<img width="1536" height="1024" alt="architeture" src="https://github.com/user-attachments/assets/fcc73161-b84c-4bb1-a71c-516503b4a08f" />
+
+
 
 ## 📱 Features
 
