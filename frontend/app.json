@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "construction_ai",
+    "slug": "construction_ai",
+    "version": "1.0.0",
+    "entryPoint": "./App.js",
+    "sdkVersion": "53.0.0",
+    "platforms": ["ios", "android"],
+    "orientation": "portrait"
+  }
+}
