@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
   FlatList,
   Button,
   StyleSheet,
-  TouchableOpacity,
   ActivityIndicator,
 } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { useNavigation, useFocusEffect } from "@react-navigation/native";
+import { useCallback } from "react";
 
 const ProjectsScreen = () => {
   const [projects, setProjects] = useState([]);
@@ -18,23 +18,31 @@ const ProjectsScreen = () => {
   const contractorId = global.contractorId;
   console.log("📡 Fetching projects for:", contractorId);
 
-  useEffect(() => {
-    if (!contractorId) {
-      console.warn("❌ No contractor ID available!");
-      return;
-    }
+  useFocusEffect(
+    useCallback(() => {
+      const fetchProjects = async () => {
+        if (!contractorId) {
+          console.warn("❌ No contractor ID available!");
+          return;
+        }
 
-    fetch(`http://192.168.1.4:8000/projects/?contractor_id=${contractorId}`)
-      .then((res) => res.json())
-      .then((data) => {
-        setProjects(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("❌ Failed to fetch projects", err);
-        setLoading(false);
-      });
-  }, []);
+        try {
+          setLoading(true);
+          const res = await fetch(
+            `http://192.168.1.4:8000/projects/?contractor_id=${contractorId}`
+          );
+          const data = await res.json();
+          setProjects(data);
+        } catch (err) {
+          console.error("❌ Failed to fetch projects", err);
+        } finally {
+          setLoading(false);
+        }
+      };
+
+      fetchProjects();
+    }, [contractorId])
+  );
 
   const renderItem = ({ item }) => (
     <View style={styles.card}>
@@ -44,11 +52,15 @@ const ProjectsScreen = () => {
       <View style={styles.row}>
         <Button
           title="View Tasks"
-          onPress={() => navigation.navigate("Tasks", { projectId: item.project_id })}
+          onPress={() =>
+            navigation.navigate("Tasks", { projectId: item.project_id })
+          }
         />
         <Button
           title="Materials"
-          onPress={() => navigation.navigate("Materials", { projectId: item.project_id })}
+          onPress={() =>
+            navigation.navigate("Materials", { projectId: item.project_id })
+          }
         />
       </View>
     </View>

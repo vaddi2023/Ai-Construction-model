@@ -1,1 +1,0 @@
-# TODO: Define Pydantic schema for material

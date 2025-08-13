@@ -52,7 +52,8 @@ const LoginScreen = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ phone_number }),
+        body: JSON.stringify({ phone_number: phoneNumber }),
+
       });
 
       const data = await response.json();

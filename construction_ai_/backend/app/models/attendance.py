@@ -1,1 +1,0 @@
-# TODO: Define SQLAlchemy model for attendance
