@@ -37,16 +37,3 @@ A mobile-first application that simplifies project tracking and site operations 
 ---
 
 ## 🚀 Getting Started
-
-### 1. Clone the repo
-
-```bash
-git clone https://github.com/vaddi2023/Ai-Construction-model.git
-cd Ai-Construction-model
-
-
-# Architecture
-<img width="1536" height="1024" alt="architeture" src="https://github.com/user-attachments/assets/a8e370b4-50f4-47b5-8d28-cdd65d14368d" />
-
-
-making changes in the field work to track and analyse the flow
