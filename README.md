@@ -21,7 +21,8 @@ A mobile-first application that simplifies project tracking and site operations 
 
 ---
 ### Architecture 
-<img width="1536" height="1024" alt="architeture" src="https://github.com/user-attachments/assets/fcc73161-b84c-4bb1-a71c-516503b4a08f" />
+<img width="1536" height="1024" alt="architeture" src="https://github.com/user-attachments/assets/7247ec20-7f22-4cf8-9d61-84038c2cf292" />
+
 
 
 
